@@ -7,6 +7,7 @@
 
 html{
     scroll-behavior:smooth;
+    scroll-padding-top:47px;
 }
 
 body{
@@ -86,12 +87,19 @@ nav a:hover{
 
 section{
     padding:70px 10%;
+    scroll-margin-top:47px;
 }
 
 section h2{
     color:#0038A8;
-    margin-bottom:20px;
+    margin-bottom:8px;
 }
+
+section p{
+    margin-bottom:12px;
+    line-height:1.6;
+}
+
 
 /* Cards */
 
@@ -99,24 +107,32 @@ section h2{
     display:flex;
     gap:20px;
     flex-wrap:wrap;
+    margin-top:30px;
+    justify-content:center;
 }
 
 .card{
-    flex:1;
+    width:320px;
     min-width:250px;
-
-    background:white;
+    background:#fff;
     padding:25px;
-
-    border-radius:12px;
-
+    border-radius:15px;
     box-shadow:0 5px 15px rgba(0,0,0,.15);
-
-    transition:.3s;
+    transition:all .3s ease;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px);
+    box-shadow:0 15px 25px rgba(0,0,0,.2);
+}
+
+card h3 {
+    color:#0038A8;
+    margin-bottom:15px;
+}
+
+card p{
+    text-align:justify;
 }
 
 /* Food List */
