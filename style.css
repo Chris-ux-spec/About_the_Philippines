@@ -109,26 +109,44 @@ section p{
 /* Cards */
 
 .cards{
-    display:flex;
-    gap:17px;
-    flex-wrap:wrap;
+    display:grid;
+    grid-template-columns:repeat(3, 320px);
+    gap:25px;
     margin-top:30px;
     justify-content:center;
+    align-items:start;
 }
 
 .card{
     width:320px;
-    min-width:250px;
-    background:#fff;
+    background:white;
     padding:25px;
     border-radius:15px;
     box-shadow:0 5px 15px rgba(0,0,0,.15);
-    transition:all .3s ease;
+    cursor:pointer;
+    overflow:hidden;
+    transition:transform 0.3s ease;
+}
+
+.card-info {
+    display:none;
+}
+
+.card-info img {
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    margin-top:15px;
+    border-radius:10px;
+    display:block;
+}
+
+.card.active .card-info {
+    display:block;
 }
 
 .card:hover{
     transform:translateY(-10px);
-    box-shadow:0 15px 25px rgba(0,0,0,.2);
 }
 
 .card h3 {
@@ -136,8 +154,9 @@ section p{
     margin-bottom:15px;
 }
 
-.card p{
-    text-align:justify;
+.card-info p{
+    margin-top:10px;
+    line-height:1.5;
 }
 
 /* Food List */
@@ -163,26 +182,25 @@ footer{
 
 @media(max-width:768px){
 
-header{
-    position:static;
+.cards {
+    grid-template-columns:1fr;
+    justify-items:center;
 }
 
-nav{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
+.card {
+    width:100%;
+    max-width:320px;
 }
 
-.hero h2{
-    font-size:2rem;
+
 }
 
-.cards{
-    flex-direction:column;
-}
+/* Tablet */    
+@media(max-width:1050px){
 
-section{
-    padding:40px 20px;
+.cards {
+    grid-template-columns:repeat(2, 320px);
+    justify-items:center;
 }
 
 }
